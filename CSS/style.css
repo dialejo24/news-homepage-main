@@ -50,7 +50,7 @@ img {
 }
 
 .main-header__title,
-.trends-article h3 {
+.trends-article h3 a {
     color: var(--very-dark-blue);
 }
 
@@ -163,6 +163,11 @@ header {
 }
 
 .trends {
+    display: grid;
+    gap:2em;
+}
+
+.trends > div {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 1.5em;
