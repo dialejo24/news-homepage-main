@@ -38,7 +38,7 @@ img {
 .main-header__title {
     font-weight: 800;
     line-height: 1;
-    font-size: 2.6rem;
+    font-size: clamp(2.6rem, 2rem + 2vw, 3.7rem);
 }
 
 .main-header__link {
@@ -83,6 +83,10 @@ img {
 .news-article p,
 .trends-article h3 + p {
     line-height: 1.7;
+}
+
+.news h2 {
+    font-size: clamp(28px,1.4rem + 1.4vw,2.3rem);
 }
 
 
@@ -143,7 +147,7 @@ header {
 .container {
     width:90%;
     margin-inline: auto;
-    max-width: 1100px;
+    max-width: 1150px;
 }
 
 header {
@@ -164,7 +168,9 @@ header {
 
 .trends {
     display: grid;
-    gap:2em;
+    gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(324px, 1fr));
+    justify-content: center;
 }
 
 .trends > div {
@@ -176,7 +182,7 @@ header {
 .trends-article {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 
@@ -195,8 +201,58 @@ header {
 
 
 @media (min-width: 800px) {
+    header {
+        margin-bottom: 3em;
+    }
+
+    .icon-menu {
+        display: none;
+    }
+
+    .nav-bar {
+        display: block;
+    }
+
+    .nav-bar__links {
+        display: flex;
+        gap: 2.5em;
+    }
+
     .main-header__backgroundImg {
         background-image: url("../assets/images/image-web-3-desktop.jpg");
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 2.3fr 1fr;
+        gap: 2em;
+    }
+
+    .main-header > div:nth-child(2) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.8em;
+    }
+
+    .main-header__info p,
+    .nav-bar__links a {
+        font-size: 1rem;
+    }
+
+    .main-header__info p {
+        margin-block: 0 1.5em;
+    }
+
+    .news {
+        margin-top: 0;
+    }
+
+    .news-article h3 {
+        font-size: 1.25rem;
+    }
+
+    .trends {
+        grid-column: span 2;
     }
 }
 
