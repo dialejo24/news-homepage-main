@@ -157,7 +157,8 @@ header {
 }
 
 .nav-bar {
-    display: none;
+    visibility: hidden;
+    position: absolute;
 }
 
 .main-header {
@@ -182,7 +183,7 @@ header {
 .trends-article {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: .8em;
 }
 
 
@@ -199,6 +200,26 @@ header {
     border-bottom: 1px solid var(--dark-grayish-blue);
 }
 
+.retro-pc__img {
+    background-image: url("../assets/images/image-retro-pcs.jpg");
+}
+
+.top-laptops__img {
+    background-image: url("../assets/images/image-top-laptops.jpg");
+}
+
+.gaming__img {
+    background-image: url("../assets/images/image-gaming-growth.jpg");
+}
+
+.retro-pc__img,
+.top-laptops__img,
+.gaming__img {
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
 
 @media (min-width: 800px) {
     header {
@@ -206,11 +227,13 @@ header {
     }
 
     .icon-menu {
-        display: none;
+        visibility: hidden;
+        position: absolute;
     }
 
     .nav-bar {
-        display: block;
+        visibility: visible;
+        position: static;
     }
 
     .nav-bar__links {
