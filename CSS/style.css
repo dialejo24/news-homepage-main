@@ -20,7 +20,6 @@
 body {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
-    position: relative;
 }
 
 ul {
@@ -101,9 +100,6 @@ img {
 .news {
     background-color: var(--very-dark-blue);
 }
-.main-header__link {
-    background-color: var(--soft-red);
-}
 
 
 /*margin and padding*/
@@ -161,12 +157,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
 }
 
 .nav-bar {
     visibility: hidden;
     position: absolute;
+    right:0;
 }
 
 .nav-bar__links {
@@ -234,12 +230,65 @@ header {
     background-repeat: no-repeat;
 }
 
+.nav-bar__links a,
+.trends-article a,
+.news-article a {
+    transition: color .2s ease-in;
+}
+
+.main-header__link {
+    position: relative;
+}
+
+.main-header__link::after {
+    content:"";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background-color: var(--soft-red);
+    z-index: -20;
+}
+
+.main-header__link::before {
+    content: "";
+    position:absolute;
+    display: block;
+    width:0;
+    left:0;
+    top:0;
+    height:100%;
+    background-color: var(--very-dark-blue);
+    transition: width .25s ease-out;
+    display: block;
+    z-index: -10;
+}
+
+
+/* hover state*/
+.nav-bar__links a:hover,
+.trends-article a:hover {
+    color: var(--soft-red);
+}
+
+.news-article a:hover {
+    color: var(--soft-orange);
+}
+
+.main-header__link:hover::before {
+    width:100%;
+}
+
+
 
 .mobile-window {
     position: absolute;
     width: 100%;
     height: 100%;
     right:0;
+    border:1px solid black;
 }
 .transparent-section {
     width:30%;
