@@ -17,6 +17,8 @@
     padding: 0;
 }
 
+
+
 body {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
@@ -282,38 +284,46 @@ header {
 }
 
 
-
+/*CSS for the window that pops up when user clicks(touches) the hamburguer menu*/
 .mobile-window {
     position: absolute;
     width: 100%;
     height: 100%;
-    right:0;
-    border:1px solid black;
+    /* right:-100%; */
+    display: flex;
+    transition: all .3s ease-in-out;
 }
+
 .transparent-section {
     width:30%;
     height: 100%;
     z-index: 10;
     background-color: rgba(0,0,0,.5);
+    visibility: hidden;   
 }
+
 .nav-section {
     width:70%;
     height:100%;
     z-index: 10;
     background-color: white;
 }
+
 .close-icon {
     margin-top: 2.2em;
     margin-right: 2em;
     display: flex;
     justify-content: flex-end;
 }
+
 .hideWindow {
-    display: none;
+    left:-100%;
 }
+
 .showWindow {
-    display: flex;
+    right:0;/* clip */
 }
+
 .showNavBar {
     visibility: visible;
     z-index: 20;

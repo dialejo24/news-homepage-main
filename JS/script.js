@@ -20,6 +20,8 @@ function displayMobileWindow() {
 
     //display navbar
     navBar.classList.add("showNavBar");
+    transparentSection.style.visibility = "visible";
+    
     
     //set html overflow to hidden
     document.body.parentElement.style.overflowY = "hidden";
@@ -31,6 +33,9 @@ function hideMobileWindow() {
 
     //hide navbar
     navBar.classList.remove("showNavBar");
+
+    //hide transparent section
+    transparentSection.style.visibility = "hidden";
 
     //set html overflow to initial value
     document.body.parentElement.style.overflowY = "initial";
